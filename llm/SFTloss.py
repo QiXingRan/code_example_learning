@@ -18,16 +18,16 @@ ignore_index参数定义为如果labels中包含了指定了需要忽略的类�
 那么在计算loss的时候就不会计算该部分的loss也就对梯度的更新不起作用
 """
 
-lm_logits = self.lm_head(hidden_states)
-loss = None
-if labels is not None:
-    labels = labels.to(lm_logits.device)
-    shift_logits = lm_logits[..., :-1, :].contiguous()
-    shift_labels = labels[..., 1:].contiguous()
-    loss_fct = CrossEntropyLoss()
-    loss = loss_fct(
-        shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1)
-    )
+# lm_logits = self.lm_head(hidden_states)
+# loss = None
+# if labels is not None:
+#     labels = labels.to(lm_logits.device)
+#     shift_logits = lm_logits[..., :-1, :].contiguous()
+#     shift_labels = labels[..., 1:].contiguous()
+#     loss_fct = CrossEntropyLoss()
+#     loss = loss_fct(
+#         shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1)
+#     )
 
 
 """
