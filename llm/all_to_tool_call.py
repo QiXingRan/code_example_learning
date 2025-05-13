@@ -21,7 +21,7 @@ class ChatCompletionRequest(BaseModel):
 parser = argparse.ArgumentParser(description="启动模型服务代理")
 parser.add_argument('--no_tool_call_base_url', type=str, default="https://api.deepseek.com/v1")
 parser.add_argument('--no_tool_call_model_name', type=str, default="deepseek-reasoner")
-parser.add_argument('--no_tool_call_api_key', type=str, default="sk-194eba8c2acc45c4a8796116b8b581f4")
+parser.add_argument('--no_tool_call_api_key', type=str, default="sk-")
 parser.add_argument('--tool_call_base_url', type=str, default="http://169.254.249.20:1234/v1")
 parser.add_argument('--tool_call_model_name', type=str, default="deepseekr1-qwen-14b")
 parser.add_argument('--tool_call_api_key', type=str, default="sk-")
