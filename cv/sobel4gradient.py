@@ -31,7 +31,7 @@ def gradient(image):
     return grad_tensor
 
 # 读取图像
-image = cv2.imread(r'F:\3d_data\MipNeRF360\garden\images\DSC07956.JPG')
+image = cv2.imread(r'../images/bicycle.JPG')
 
 # 检查图像是否成功加载
 if image is None:
@@ -42,8 +42,9 @@ else:
 
     # 将梯度张量转换回NumPy数组，并调整通道顺序
     grad_numpy = grad_tensor.cpu().numpy().transpose((1, 2, 0))
+    print(grad_numpy.shape)
 
     # 保存梯度图像
-    output_path = r'F:\3d_data\MipNeRF360\gradient_image.jpg' # 修改保存路径与文件名
+    output_path = r'../images/bicycle_sobel.JPG' # 修改保存路径与文件名
     cv2.imwrite(output_path, grad_numpy)
     print(f"Gradient image saved to {output_path}")
